@@ -1,41 +1,42 @@
-document.getElementById("startBtn").addEventListener("click", function () {
+const container = document.querySelector(".container");
 
-    document.querySelector(".container").innerHTML = `
+document.getElementById("startBtn").addEventListener("click", () => {
 
-        <h1 class="title">🌸 Chapter 1 🌸</h1>
+container.innerHTML = `
+<h1 class="title">💖 Love Quest 💖</h1>
 
-        <p class="subtitle">
-            Every great love story begins with a single step...
-            <br><br>
-            Today is the day your adventure starts.
-            Every choice, every smile, every memory will become part of your Love Quest.
-            <br><br>
-            Are you ready? ❤️
-        </p>
+<p class="subtitle">
+Before we begin...
+Tell us your names ❤️
+</p>
 
-        <button id="nextBtn">
-            Continue ➜
-        </button>
+<input id="yourName" placeholder="Your Name">
 
-    `;
+<input id="partnerName" placeholder="Partner's Name">
 
-    document.getElementById("nextBtn").addEventListener("click", function(){
+<br><br>
 
-        document.querySelector(".container").innerHTML = `
+<button id="continueBtn">Continue ❤️</button>
+`;
 
-            <h1 class="title">💌 Welcome 💌</h1>
+document.getElementById("continueBtn").addEventListener("click", () => {
 
-            <p class="subtitle">
-                This journey is full of memories,
-                surprises,
-                laughter,
-                and lots of love.
-                <br><br>
-                Let the adventure begin... ❤️
-            </p>
+const you = document.getElementById("yourName").value || "You";
+const partner = document.getElementById("partnerName").value || "My Love";
 
-        `;
+container.innerHTML = `
+<h1 class="title">Welcome ${you} ❤️ ${partner}</h1>
 
-    });
+<p class="subtitle">
+Every great love story begins with a single step.
 
+Today your Love Quest officially begins.
+
+Ready for your first challenge?
+</p>
+
+<button id="chapter1">Start Adventure 🌸</button>
+`;
+
+});
 });
